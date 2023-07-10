@@ -4,7 +4,15 @@ var quiz = document.getElementById("quiz");
 var time = document.getElementById("current-time");
 var response = document.getElementById("show-response");
 var secondsLeft = 75;
-index = 0;
+var index = 0;
+var playerScore = 0;
+var scoreList = [];
+var playerInitials = "";
+
+localStorage.setItem("allPlayerScore", localStorage.getItem("allPlayerScore") + ("playerScore"));
+
+console.log(localStorage.getItem("playerScore"));
+
 var questions = 
 [
 '<h1 id="question">Which of the following methods can be used to add an element to the end of an array?</h1><ul id="answers"><li><button onclick="correctAnswer()" > a) push()</button></li><li><button onclick="incorrectAnswer()" > b) unshift()</button></li><li><button onclick="incorrectAnswer()" > c) concat()</button></li><li><button onclick="incorrectAnswer()" > d) pop()</button></li></ul>',
@@ -23,14 +31,22 @@ function setTime () {
 
         if (secondsLeft <= 0)
         {
-            clearInterval(timerInterval)
+            clearInterval(timerInterval);
             endQuiz();
         }
+        if (index === questions.length)
+        {
+            clearInterval(timerInterval);
+            index = 0;
+        }
+
     }, 1000)
 }
 //starting timer
 setTime();
 }
+
+
 
 function correctAnswer (){
     index++;
@@ -62,8 +78,18 @@ function incorrectAnswer () {
     }
 }
 
-function endQuiz () {
-    console.log("Done");
-    index = 0;
-    window.location = "index.html";
+function endQuiz() {
+
+    playerScore = secondsLeft;
+    quiz.innerHTML = "";
+    quiz.innerHTML = '<h1 id="question">All done!</h1><p id="score">Your final score is </p><form id="playerScoreForm" action="highscore.html"><span id="score"> Enter intials: </span><input type="text" name="" id="playerScore"><button id="submitScore">Submit</button></form>';
+    var playerScoreTxt = document.getElementById("score");
+    playerScoreTxt.textContent += playerScore + ".";
+    var txtBx = document.getElementById("playerScore");
+    var submitInitials = document.getElementById("submitScore");
+    submitInitials.onclick = function(){
+        localStorage.setItem("playerScore", txtBx.value + " - " + playerScore.toString() + ",");
+    }
+    
 }
+

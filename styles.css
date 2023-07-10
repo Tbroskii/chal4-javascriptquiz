@@ -18,7 +18,9 @@
 }
 
 #top{
-    margin-top: 1%;
+    margin-top: 0.5%;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
     display: flex;
 }
 #timer{
@@ -30,7 +32,7 @@
 }
 
 #landing-page h1{
-    margin-top: 30%;
+    margin-top: 20%;
     font-size:2em ;   
 }
 
@@ -102,4 +104,38 @@
     font-size:1.8em;
     color: gray;
     margin-top: 2%;
+}
+
+/*score logging*/
+#score {
+    font-size: 1.3em;
+}
+
+#playerScore {
+    font-size: 1.5em;
+}
+
+#playerScoreForm {
+    margin-top: 1%;
+}
+
+#submitScore {
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: #f5f5f5;
+    background-color: #361578;
+    font-size: 1em;
+    font-weight:bold;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    margin-top: 1%;
+    text-align: center;
+    margin-left: 1%;
+}
+
+#submitScore:hover{
+    background-color:#c745d5 ;
 }
