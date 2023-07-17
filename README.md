@@ -12,7 +12,7 @@ https://tbroskii.github.io/chal4-javascriptquiz/
 
 ## Usage
 When you land on the starting page you will have 2 options of places to go. The first is in the top left hand corner where you can go to view highscores. The second is the start quiz button. 
-When the quiz is started you will be presented with 
+When the quiz is started you will be presented with a question and four possible answers, also a timer will be started with 75 seconds on the clock. After each answer is clicked you will automatically be brought to the next question. If you answered the question correctly or incorrectly that will be displayed below the next question. If an answer is answered incorrectly 10 seconds will be deducted from your time. If your time hits 0 or you complete all questions you will then be asked to enter your intials into a textbox. The initials entered in the textbox will be used to display your highscore. When you submit your initials you will automatically be taken to the highscore page. On the highscore page the go back button will take you back to the landing page so you can start the quiz again. The clear highscore button will clear all current highscores.
 
 ## License
 MIT License
